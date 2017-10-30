@@ -15,29 +15,6 @@ var inquirer = require("inquirer");
 missLetters = 0;
 
 
-function Word(letters){
-	this.correctLetters = function(){
-		console.log("hi!");
-		for (var i = 0; i < ranWord.length; i ++){
-			if (letter === ranWord[i]){
-				guessLetterArray[i] = letter;
-
-			}
-			else {
-				missLetters++;
-				console.log("error!");
-			}
-		}
-	}
-}
-
-function Letters(){
-    this.initialize = function(){
-    	for(var i = 0; i < ranWord.length; i++){
-    		guessLetterArray[i] = '_';
-    	}
-    }
-}
 
 Word.prototype.printInfo = function() {
 	
