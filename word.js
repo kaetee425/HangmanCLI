@@ -8,7 +8,7 @@ var Word = function(word){
 	this.guessChar = [];
 };
 
-Word.prototype.addGuessChar = function(char){
+Word.prototype.guessArr = function(char){
 	this.guessChar.push(char);
 
 	for (var i = 0; i < letters.length; i++){
@@ -28,23 +28,6 @@ Word.prototype.hasChar = function(char){
 	};
 };
 
-Word.prototype.guessArr = function(){
-	var guessArr = [];
-
-	for (var i = 0; i < this.letters.length; i++){
-		guessArr.push(this.letters[i].stringy())
-	}
-	return guessArr.join(" ");
-};
-
-Word.prototype.hasGuessChar = function(char){
-	if (this.guessChar.indexOf(char) === -1){
-		return false
-	} else {
-		return true
-	};
-};
-
 Word.prototype.complete = function(){
 	for (var i = 0; i < this.letters.length; i++){
 		if (this.letters[i].char != " " && this.letters[i].isCorrect === false ){
@@ -54,3 +37,6 @@ Word.prototype.complete = function(){
 		}
 	};
 };
+
+
+module.exports = Word;
